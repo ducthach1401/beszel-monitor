@@ -1,0 +1,15 @@
+services:
+  beszel:
+    image: henrygd/beszel:0.18
+    container_name: beszel
+    restart: unless-stopped
+    environment:
+      APP_URL: ${APP_URL}
+    ports:
+      - "${BESZEL_PORT}:8090"
+    volumes:
+      - beszel_data:/beszel_data
+
+volumes:
+  beszel_data:
+    name: beszel_data

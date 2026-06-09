@@ -1,0 +1,19 @@
+services:
+  beszel-agent:
+    image: henrygd/beszel-agent:0.18
+    container_name: beszel-agent
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - beszel_agent_data:/var/lib/beszel-agent
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      DISABLE_SSH: "true"
+      HUB_URL: ${HUB_URL}
+      TOKEN: ${AGENT_TOKEN}
+      KEY: ${AGENT_KEY}
+      SYSTEM_NAME: ${SYSTEM_NAME}
+
+volumes:
+  beszel_agent_data:
+    name: beszel_agent_data
