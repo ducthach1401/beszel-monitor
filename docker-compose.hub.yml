@@ -9,7 +9,11 @@ services:
       - "${BESZEL_PORT}:8090"
     volumes:
       - beszel_data:/beszel_data
-
+    deploy:
+      resources:
+        limits:
+          cpus: "0.10"
+          memory: 128M
 volumes:
   beszel_data:
     name: beszel_data

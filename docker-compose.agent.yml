@@ -13,7 +13,11 @@ services:
       TOKEN: ${AGENT_TOKEN}
       KEY: ${AGENT_KEY}
       SYSTEM_NAME: ${SYSTEM_NAME}
-
+    deploy:
+      resources:
+        limits:
+          cpus: "0.10"
+          memory: 128M
 volumes:
   beszel_agent_data:
     name: beszel_agent_data
