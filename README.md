@@ -117,6 +117,7 @@ Lưu ý:
 
 - Script chỉ xóa record trong bảng `systems`
 - Mặc định dùng Docker volume `beszel_data`
+- Nếu thấy lỗi bảng `systems` không tồn tại, thường là do Hub chưa khởi tạo DB hoặc volume đang trỏ sai
 - Nếu agent cũ vẫn còn chạy với token hợp lệ, nó có thể tự đăng ký lại
 - Log cron được ghi vào `cleanup-systems.log`
 
